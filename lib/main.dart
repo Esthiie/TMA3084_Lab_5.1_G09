@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'app_state.dart';
 import 'profile_about_page.dart';
+import 'student_records_page.dart';
 
 void main() {
   runApp(
@@ -71,7 +72,7 @@ class HomeShell extends StatelessWidget {
             ),
           ),
           NavigationDrawerDestination(icon: Icon(Icons.home_outlined), selectedIcon: Icon(Icons.home), label: Text('Home')),
-          NavigationDrawerDestination(icon: Icon(Icons.people_outline), selectedIcon: Icon(Icons.people), label: Text('Students')),
+          NavigationDrawerDestination(icon: Icon(Icons.people_outlined), selectedIcon: Icon(Icons.people), label: Text('Students')),
           NavigationDrawerDestination(icon: Icon(Icons.table_chart_outlined), selectedIcon: Icon(Icons.table_chart), label: Text('Records')),
           NavigationDrawerDestination(icon: Icon(Icons.category_outlined), selectedIcon: Icon(Icons.category), label: Text('Programmes')),
           NavigationDrawerDestination(icon: Icon(Icons.info_outline), selectedIcon: Icon(Icons.info), label: Text('About & Profile')),
@@ -91,4 +92,22 @@ class HomeShell extends StatelessWidget {
       ),
     );
   }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+  @override
+  Widget build(BuildContext context) => const Center(child: Text('Home Page', style: TextStyle(fontSize: 20)));
+}
+
+class StudentInfoPage extends StatelessWidget {
+  const StudentInfoPage({super.key});
+  @override
+  Widget build(BuildContext context) => const Center(child: Text('Students Info Page', style: TextStyle(fontSize: 20)));
+}
+
+class ProgramTabPage extends StatelessWidget {
+  const ProgramTabPage({super.key});
+  @override
+  Widget build(BuildContext context) => const Center(child: Text('Programmes Page', style: TextStyle(fontSize: 20)));
 }

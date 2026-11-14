@@ -33,12 +33,13 @@ class ProfileAboutPage extends StatelessWidget {
                   right: 0,
                   child: Center(
                     child: CircleAvatar(
-                    radius: 50,
-                    backgroundColor: Colors.white,
-                    child: CircleAvatar(
-                      radius: 46,
-                      backgroundColor: Colors.grey,
-                      child: Icon(Icons.group, size: 50, color: Colors.white),
+                      radius: 50,
+                      backgroundColor: Colors.white,
+                      child: CircleAvatar(
+                        radius: 46,
+                        backgroundColor: Colors.grey,
+                        child: Icon(Icons.group, size: 50, color: Colors.white),
+                      ),
                     ),
                   ),
                 ),
