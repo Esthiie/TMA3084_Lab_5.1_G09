@@ -27,10 +27,12 @@ class ProfileAboutPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                Positioned(
+                const Positioned(
                   top: 90,
-                  left: MediaQuery.of(context).size.width / 2 - 50,
-                  child: const CircleAvatar(
+                  left: 0,
+                  right: 0,
+                  child: Center(
+                    child: CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.white,
                     child: CircleAvatar(
