@@ -121,8 +121,6 @@ class ProgrammePage extends StatelessWidget {
     );
   }
 }
-<<<<<<< HEAD
-=======
 
 class StudentInfoPage extends StatelessWidget {
   const StudentInfoPage({super.key});
@@ -137,4 +135,3 @@ class StudentInfoPage extends StatelessWidget {
     );
   }
 }
->>>>>>> b321609383fe1c22387b1dafbe0a39237cd176c9
