@@ -77,3 +77,39 @@ During this lab, **Gemini Pro** was utilized exclusively as the primary AI produ
 ## 3. Reflection on AI-Assisted Development
 * **Efficiency & Workflow:** Step-by-step guidance helped me understand each `DataTable` widget before writing it, and the analyzer error explanation saved time. I still had to adjust the AI's suggestions to fit the group's actual files.
 * **Problem Solving:** Several AI suggestions did not match our project at first (its own model, invented ages, extra folders). I checked each one against my teammate's code and the lab requirements before accepting it, and rejected the ones that did not fit.
+
+---
+
+# AI Usage Log - Estherne (104062)
+
+* **Student Name:** Estherne Liow Ker Yin
+* **Matric Number:** 104062
+* **Group:** Team 09 (TMA3084 Lab 5.1)
+* **Feature Developed:** Programme Page (`programme_page.dart`)
+
+---
+
+## 1. Overview of AI Tools Used
+**Gemini** was used to check for major errors and typo that cannot be detected inside the overall coding, mainly 'home_page.dart' to connect all dart codings. I have written and modified some of the codes since they may work but did not show proper output.
+
+---
+
+## 2. Summary of AI Prompts & Responses
+
+### Prompt 1: Import standalone package material_ui to flutter 3.47
+* **Tool:** Gemini
+* **Prompt:** *"I have already typed dart format . and have changed the names of the files. Why does it still show errors?"*
+* **AI Output:** Flutter 3.47 has migrated to material_ui and cupertino_ui packages for future work. Recommeded to enter 'flutter pub add material_ui' into the terminal and replace all 'import 'package:flutter/material.dart'' to 'import 'package:material_ui/material_ui.dart''.
+* **Integration Decision:** Accepted and updated the flutter version 3.47. Actions cl files has been successful.
+
+### Prompt 2: Linking other coding to home_page.dart
+* **Tool:** Gemini
+* **Prompt:** *"Some of the dart coding are inside different folders. How can I link and import written data/student.dart into home_page.dart?"*
+* **AI Output:** Write 'import page/student.dart' in the header to link them to home_page.dart.
+* **Integration Decision:** Suggestion denied. It does not fully resolve the conflict and disconnection, so I opted for redirecting 'student.dart' from data folder into lib folder.
+
+---
+
+## 3. Reflection on AI-Assisted Development
+* **Efficiency & Workflow:** It certainly help with fixing errors that require a lot of time to go through each files. However, I feel like it took more time to properly debug the application and pushing/pulling github since I can type much faster without refering to prompts.
+* **Problem Solving:** I think AI suggestions have 50% correctness in solving problems, thus human invention is still required to check each code one by one.
