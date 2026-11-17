@@ -11,7 +11,7 @@ import 'student_information_page.dart';
 void main() {
   runApp(
     ChangeNotifierProvider(
-      create: (_) => AppStateManager(),
+      create: (context) => AppStateManager(),
       child: const StudentHubApp(),
     ),
   );
