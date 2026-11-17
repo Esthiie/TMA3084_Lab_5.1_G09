@@ -1,4 +1,4 @@
-import 'package:flutter/foundation.dart';
+import 'package:material_ui/material_ui.dart';
 
 // One student's data (field names match the group's Student model)
 class StudentRecord {
