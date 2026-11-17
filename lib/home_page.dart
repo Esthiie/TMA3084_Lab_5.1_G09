@@ -15,7 +15,9 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('StudentHubbb'),
+
+        title: const Text('StudentHub'),
+        second_conflict_merge
         centerTitle: true,
         backgroundColor: colors.primary,
         foregroundColor: Colors.white,
@@ -38,7 +40,7 @@ class HomePage extends StatelessWidget {
               Expanded(
                 child: _OverviewCard(
                   icon: Icons.groups,
-                  label: 'Total Students but more',
+                  label: 'Total Students',
                   value: sampleStudents.length,
                   color: const Color(0xFF1E6FE0),
                 ),
