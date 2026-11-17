@@ -6,7 +6,7 @@ import 'app_state.dart';
 import 'profile_about_page.dart';
 import 'student_records_page.dart';
 import 'programme_page.dart';
-import 'studentInformationpage.dart';
+import 'student_information_page.dart';
 
 void main() {
   runApp(

@@ -4,14 +4,12 @@ import 'package:provider/provider.dart';
 import 'app_state.dart';
 import 'programmes.dart';
 import 'students_data.dart';
-import 'studentInformationPage.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final appState = Provider.of<AppStateManager>(context, listen: false);
     final colors = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
 

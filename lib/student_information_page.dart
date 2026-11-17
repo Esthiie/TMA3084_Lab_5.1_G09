@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'student.dart';
-import 'StudentDetailsPage.dart';
+import 'student_details_page.dart';
 
 // Student data
 final List<Student> studentData = [
