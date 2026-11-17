@@ -13,9 +13,7 @@ class StudentRecordsPage extends StatelessWidget {
     final state = context.watch<AppStateManager>();
 
     if (state.records.isEmpty) {
-      return const Center(
-        child: Text('No student records available'),
-      );
+      return const Center(child: Text('No student records available'));
     }
 
     return SingleChildScrollView(
@@ -25,10 +23,7 @@ class StudentRecordsPage extends StatelessWidget {
         children: [
           const Text(
             'Student Records',
-            style: TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-            ),
+            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 16),
 
@@ -42,27 +37,16 @@ class StudentRecordsPage extends StatelessWidget {
                 DataColumn(
                   label: const Text('Name'),
                   onSort: (columnIndex, ascending) {
-                    state.sortRecords(
-                          (s) => s.name,
-                      columnIndex,
-                      ascending,
-                    );
+                    state.sortRecords((s) => s.name, columnIndex, ascending);
                   },
                 ),
                 const DataColumn(label: Text('Programme')),
-                const DataColumn(
-                  label: Text('Year'),
-                  numeric: true,
-                ),
+                const DataColumn(label: Text('Year'), numeric: true),
                 DataColumn(
                   label: const Text('CGPA'),
                   numeric: true,
                   onSort: (columnIndex, ascending) {
-                    state.sortRecords(
-                          (s) => s.cgpa,
-                      columnIndex,
-                      ascending,
-                    );
+                    state.sortRecords((s) => s.cgpa, columnIndex, ascending);
                   },
                 ),
               ],
@@ -73,9 +57,7 @@ class StudentRecordsPage extends StatelessWidget {
                     DataCell(Text(record.name)),
                     DataCell(Text(record.programmeCode)),
                     DataCell(Text('${record.yearOfStudy}')),
-                    DataCell(
-                      Text(record.cgpa.toStringAsFixed(2)),
-                    ),
+                    DataCell(Text(record.cgpa.toStringAsFixed(2))),
                   ],
                 );
               }).toList(),

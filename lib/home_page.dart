@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
 import 'app_state.dart';
 import 'programmes.dart';
 import 'students_data.dart';
@@ -10,10 +11,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final appState = Provider.of<AppStateManager>(
-      context,
-      listen: false,
-    );
+    final appState = Provider.of<AppStateManager>(context, listen: false);
     final colors = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
 

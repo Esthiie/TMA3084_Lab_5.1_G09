@@ -1,6 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
 import 'app_state.dart';
 
 class ProgrammePage extends StatelessWidget {
@@ -49,14 +49,10 @@ class ProgrammePage extends StatelessWidget {
     );
   }
 
-  Widget buildStudentList(
-      AppStateManager state, String programmeCode) {
-
+  Widget buildStudentList(AppStateManager state, String programmeCode) {
     final students = programmeCode == 'ALL'
         ? state.records
-        : state.records
-        .where((s) => s.programmeCode == programmeCode)
-        .toList();
+        : state.records.where((s) => s.programmeCode == programmeCode).toList();
 
     return Column(
       children: [
@@ -68,54 +64,44 @@ class ProgrammePage extends StatelessWidget {
               programmeCode == 'ALL'
                   ? 'All Students'
                   : 'Programme: $programmeCode',
-              style: const TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
           ),
         ),
 
         Expanded(
           child: students.isEmpty
-              ? const Center(
-            child: Text('No student records found'),
-          )
+              ? const Center(child: Text('No student records found'))
               : ListView.builder(
-            padding: const EdgeInsets.all(12),
-            itemCount: students.length,
-            itemBuilder: (context, index) {
-              final student = students[index];
+                  padding: const EdgeInsets.all(12),
+                  itemCount: students.length,
+                  itemBuilder: (context, index) {
+                    final student = students[index];
 
-              return Card(
-                elevation: 2,
-                margin: const EdgeInsets.only(bottom: 12),
-                child: ListTile(
-                  leading: const CircleAvatar(
-                    backgroundColor: Colors.blue,
-                    child: Icon(
-                      Icons.person,
-                      color: Colors.white,
-                    ),
-                  ),
-                  title: Text(
-                    student.name,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  subtitle: Text(
-                    'Matric No: ${student.matricNo}\n'
-                        'Programme: ${student.programmeCode}\n'
-                        'Email: ${student.email}\n'
-                        'Year: ${student.yearOfStudy}\n'
-                        'CGPA: ${student.cgpa.toStringAsFixed(2)}',
-                  ),
-                  isThreeLine: true,
+                    return Card(
+                      elevation: 2,
+                      margin: const EdgeInsets.only(bottom: 12),
+                      child: ListTile(
+                        leading: const CircleAvatar(
+                          backgroundColor: Colors.blue,
+                          child: Icon(Icons.person, color: Colors.white),
+                        ),
+                        title: Text(
+                          student.name,
+                          style: const TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        subtitle: Text(
+                          'Matric No: ${student.matricNo}\n'
+                          'Programme: ${student.programmeCode}\n'
+                          'Email: ${student.email}\n'
+                          'Year: ${student.yearOfStudy}\n'
+                          'CGPA: ${student.cgpa.toStringAsFixed(2)}',
+                        ),
+                        isThreeLine: true,
+                      ),
+                    );
+                  },
                 ),
-              );
-            },
-          ),
         ),
       ],
     );
@@ -128,10 +114,7 @@ class StudentInfoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text(
-        'Students Info Page',
-        style: TextStyle(fontSize: 20),
-      ),
+      child: Text('Students Info Page', style: TextStyle(fontSize: 20)),
     );
   }
 }

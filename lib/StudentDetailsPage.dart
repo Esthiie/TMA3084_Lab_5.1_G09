@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
+
 import 'student.dart';
 
 class StudentDetailsPage extends StatelessWidget {
   final Student student;
 
-  const StudentDetailsPage({
-    super.key,
-    required this.student,
-  });
+  const StudentDetailsPage({super.key, required this.student});
 
   @override
   Widget build(BuildContext context) {
@@ -30,11 +28,7 @@ class StudentDetailsPage extends StatelessWidget {
                   child: CircleAvatar(
                     radius: 45,
                     backgroundColor: Color(0xFFE3EEFF),
-                    child: Icon(
-                      Icons.person,
-                      size: 50,
-                      color: Colors.blue,
-                    ),
+                    child: Icon(Icons.person, size: 50, color: Colors.blue),
                   ),
                 ),
                 const SizedBox(height: 24),

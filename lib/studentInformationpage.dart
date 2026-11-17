@@ -120,13 +120,12 @@ class _StudentInformationPageState extends State<StudentInformationPage> {
 
       final matchesSearch =
           student.name.toLowerCase().contains(searchText) ||
-              student.matricNo.toLowerCase().contains(searchText);
+          student.matricNo.toLowerCase().contains(searchText);
 
       final selectedCode = programmes[selectedProgramme];
 
       final matchesProgramme =
-          selectedProgramme == 'All' ||
-              student.programmeCode == selectedCode;
+          selectedProgramme == 'All' || student.programmeCode == selectedCode;
 
       return matchesSearch && matchesProgramme;
     }).toList();
