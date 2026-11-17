@@ -121,3 +121,20 @@ class ProgrammePage extends StatelessWidget {
     );
   }
 }
+<<<<<<< HEAD
+=======
+
+class StudentInfoPage extends StatelessWidget {
+  const StudentInfoPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Text(
+        'Students Info Page',
+        style: TextStyle(fontSize: 20),
+      ),
+    );
+  }
+}
+>>>>>>> b321609383fe1c22387b1dafbe0a39237cd176c9
