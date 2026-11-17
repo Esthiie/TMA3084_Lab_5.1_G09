@@ -29,6 +29,14 @@ jobs:
       - name: Install Dependencies
         run: flutter pub get
 
+      - name: Dart Formatting
+      - run: dart format .
+
+      - name: Commit Formatted Files
+      - run: stefanzweife/git-auto-commit-action@v5
+      - with:
+          commit_message: "Auto-format Dart"
+
       - name: Check Dart Formatting
         run: dart format --output=none --set-exit-if-changed .
 
