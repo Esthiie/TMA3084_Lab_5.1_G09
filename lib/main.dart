@@ -39,11 +39,11 @@ class HomeShell extends StatelessWidget {
     final currentIndex = context.watch<AppStateManager>().currentIndex;
 
     final List<Widget> pages = [
-       const HomePage(),
-       const StudentInfoPage(),
-       const StudentRecordsPage(),
-        const ProgramTabPage(),
-        const ProfileAboutPage(),
+      const HomePage(),
+      const StudentInfoPage(),
+      const StudentRecordsPage(),
+      const ProgrammePage(),
+      const ProfileAboutPage(),
     ];
 
     return Scaffold(
@@ -87,7 +87,7 @@ class HomeShell extends StatelessWidget {
           NavigationDestination(icon: Icon(Icons.home_outlined), selectedIcon: Icon(Icons.home), label: 'Home'),
           NavigationDestination(icon: Icon(Icons.people_outline), selectedIcon: Icon(Icons.people), label: 'Students'),
           NavigationDestination(icon: Icon(Icons.table_chart_outlined), selectedIcon: Icon(Icons.table_chart), label: 'Records'),
-          NavigationDestination(icon: Icon(Icons.category_outlined), selectedIcon: Icon(Icons.category), label: 'Tabs'),
+          NavigationDestination(icon: Icon(Icons.category_outlined), selectedIcon: Icon(Icons.category), label: 'Programmes'),
           NavigationDestination(icon: Icon(Icons.person_outline), selectedIcon: Icon(Icons.person), label: 'Profile'),
         ],
       ),
