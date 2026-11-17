@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'app_state.dart';
 import 'profile_about_page.dart';
 import 'student_records_page.dart';
+import 'programme_page.dart';
 
 void main() {
   runApp(
@@ -38,11 +39,11 @@ class HomeShell extends StatelessWidget {
     final currentIndex = context.watch<AppStateManager>().currentIndex;
 
     final List<Widget> pages = [
-      const HomePage(),
-      const StudentInfoPage(),
-      const StudentRecordsPage(),
-      const ProgramTabPage(),
-      const ProfileAboutPage(),
+       const HomePage(),
+       const StudentInfoPage(),
+       const StudentRecordsPage(),
+        const ProgramTabPage(),
+        const ProfileAboutPage(),
     ];
 
     return Scaffold(
@@ -104,10 +105,4 @@ class StudentInfoPage extends StatelessWidget {
   const StudentInfoPage({super.key});
   @override
   Widget build(BuildContext context) => const Center(child: Text('Students Info Page', style: TextStyle(fontSize: 20)));
-}
-
-class ProgramTabPage extends StatelessWidget {
-  const ProgramTabPage({super.key});
-  @override
-  Widget build(BuildContext context) => const Center(child: Text('Programmes Page', style: TextStyle(fontSize: 20)));
 }
