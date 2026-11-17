@@ -70,7 +70,7 @@ class HomePage extends StatelessWidget {
             icon: Icons.people_alt_outlined,
             label: 'View Students',
             onPressed: () {
-              context.read<AppStateManager>().selectTab(2);
+              context.read<AppStateManager>().selectTab(1);
             },
           ),
 
