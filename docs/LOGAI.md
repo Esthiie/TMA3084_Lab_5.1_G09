@@ -2,7 +2,7 @@
 
 * **Student Name:** Daiyanti anak Juit
 * **Matric Number:** 103756
-* **Group:** Team 09 (TMF3084 Lab 5.1)
+* **Group:** Team 09 (TMA3084 Lab 5.1)
 * **Feature Developed:** Profile and About Page (`profile_about_page.dart`)
 
 ---
