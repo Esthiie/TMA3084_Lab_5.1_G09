@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'home_page.dart';
 import 'app_state.dart';
 import 'profile_about_page.dart';
 import 'student_records_page.dart';
+import 'programme_page.dart';
+import 'studentInformationpage.dart';
 
 void main() {
   runApp(
@@ -39,15 +42,18 @@ class HomeShell extends StatelessWidget {
 
     final List<Widget> pages = [
       const HomePage(),
-      const StudentInfoPage(),
+      const StudentInformationPage(),
       const StudentRecordsPage(),
-      const ProgramTabPage(),
+      const ProgrammePage(),
       const ProfileAboutPage(),
     ];
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('StudentHub Portal', style: TextStyle(fontWeight: FontWeight.bold)),
+        title: const Text(
+          'StudentHub Portal',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
         backgroundColor: Colors.blue,
         foregroundColor: Colors.white,
         centerTitle: true,
@@ -67,15 +73,42 @@ class HomeShell extends StatelessWidget {
               children: [
                 Icon(Icons.school, size: 48, color: Colors.white),
                 SizedBox(height: 8),
-                Text('StudentHub Menu', style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
+                Text(
+                  'StudentHub Menu',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ],
             ),
           ),
-          NavigationDrawerDestination(icon: Icon(Icons.home_outlined), selectedIcon: Icon(Icons.home), label: Text('Home')),
-          NavigationDrawerDestination(icon: Icon(Icons.people_outlined), selectedIcon: Icon(Icons.people), label: Text('Students')),
-          NavigationDrawerDestination(icon: Icon(Icons.table_chart_outlined), selectedIcon: Icon(Icons.table_chart), label: Text('Records')),
-          NavigationDrawerDestination(icon: Icon(Icons.category_outlined), selectedIcon: Icon(Icons.category), label: Text('Programmes')),
-          NavigationDrawerDestination(icon: Icon(Icons.info_outline), selectedIcon: Icon(Icons.info), label: Text('About & Profile')),
+          NavigationDrawerDestination(
+            icon: Icon(Icons.home_outlined),
+            selectedIcon: Icon(Icons.home),
+            label: Text('Home'),
+          ),
+          NavigationDrawerDestination(
+            icon: Icon(Icons.people_outline),
+            selectedIcon: Icon(Icons.people),
+            label: Text('Students'),
+          ),
+          NavigationDrawerDestination(
+            icon: Icon(Icons.table_chart_outlined),
+            selectedIcon: Icon(Icons.table_chart),
+            label: Text('Records'),
+          ),
+          NavigationDrawerDestination(
+            icon: Icon(Icons.category_outlined),
+            selectedIcon: Icon(Icons.category),
+            label: Text('Programmes'),
+          ),
+          NavigationDrawerDestination(
+            icon: Icon(Icons.info_outline),
+            selectedIcon: Icon(Icons.info),
+            label: Text('About & Profile'),
+          ),
         ],
       ),
       body: pages[currentIndex],
@@ -83,31 +116,33 @@ class HomeShell extends StatelessWidget {
         selectedIndex: currentIndex,
         onDestinationSelected: context.read<AppStateManager>().selectTab,
         destinations: const [
-          NavigationDestination(icon: Icon(Icons.home_outlined), selectedIcon: Icon(Icons.home), label: 'Home'),
-          NavigationDestination(icon: Icon(Icons.people_outline), selectedIcon: Icon(Icons.people), label: 'Students'),
-          NavigationDestination(icon: Icon(Icons.table_chart_outlined), selectedIcon: Icon(Icons.table_chart), label: 'Records'),
-          NavigationDestination(icon: Icon(Icons.category_outlined), selectedIcon: Icon(Icons.category), label: 'Tabs'),
-          NavigationDestination(icon: Icon(Icons.person_outline), selectedIcon: Icon(Icons.person), label: 'Profile'),
+          NavigationDestination(
+            icon: Icon(Icons.home_outlined),
+            selectedIcon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.people_outline),
+            selectedIcon: Icon(Icons.people),
+            label: 'Students',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.table_chart_outlined),
+            selectedIcon: Icon(Icons.table_chart),
+            label: 'Records',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.category_outlined),
+            selectedIcon: Icon(Icons.category),
+            label: 'Programmes',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.person_outline),
+            selectedIcon: Icon(Icons.person),
+            label: 'Profile',
+          ),
         ],
       ),
     );
   }
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-  @override
-  Widget build(BuildContext context) => const Center(child: Text('Home Page', style: TextStyle(fontSize: 20)));
-}
-
-class StudentInfoPage extends StatelessWidget {
-  const StudentInfoPage({super.key});
-  @override
-  Widget build(BuildContext context) => const Center(child: Text('Students Info Page', style: TextStyle(fontSize: 20)));
-}
-
-class ProgramTabPage extends StatelessWidget {
-  const ProgramTabPage({super.key});
-  @override
-  Widget build(BuildContext context) => const Center(child: Text('Programmes Page', style: TextStyle(fontSize: 20)));
 }

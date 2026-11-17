@@ -1,59 +1,89 @@
-
 import 'package:flutter/material.dart';
-import '../models/student.dart';
-import 'studentdetails.dart';
+
+import 'student.dart';
+import 'StudentDetailsPage.dart';
 
 // Student data
 final List<Student> studentData = [
   Student(
     name: 'Estherne Liow',
-    studentId: '100101',
-    programme: 'Software Engineering',
+    matricNo: '100101',
+    programmeCode: 'SE',
+    email: '100101@siswa.unimas.my',
+    yearOfStudy: 3,
+    cgpa: 3.90,
   ),
   Student(
     name: 'Reselda Robie',
-    studentId: '100102',
-    programme: 'Computational Science',
+    matricNo: '100102',
+    programmeCode: 'CS',
+    email: '100102@siswa.unimas.my',
+    yearOfStudy: 3,
+    cgpa: 3.80,
   ),
   Student(
     name: 'Daiyanti Juit',
-    studentId: '100103',
-    programme: 'Multimedia Computing',
+    matricNo: '100103',
+    programmeCode: 'MC',
+    email: '100103@siswa.unimas.my',
+    yearOfStudy: 2,
+    cgpa: 3.65,
   ),
   Student(
     name: 'Norasyikin Amirah',
-    studentId: '100104',
-    programme: 'Data Engineering',
+    matricNo: '100104',
+    programmeCode: 'DE',
+    email: '100104@siswa.unimas.my',
+    yearOfStudy: 3,
+    cgpa: 3.70,
   ),
   Student(
     name: 'Vanessa Fedillia',
-    studentId: '100105',
-    programme: 'Network Computing',
+    matricNo: '100105',
+    programmeCode: 'NC',
+    email: '100105@siswa.unimas.my',
+    yearOfStudy: 2,
+    cgpa: 3.55,
   ),
   Student(
     name: 'Sara Lee',
-    studentId: '100106',
-    programme: 'Multimedia Computing',
+    matricNo: '100106',
+    programmeCode: 'MC',
+    email: '100106@siswa.unimas.my',
+    yearOfStudy: 4,
+    cgpa: 3.85,
   ),
   Student(
     name: 'Bala Subaramaniam',
-    studentId: '100107',
-    programme: 'Computational Science',
+    matricNo: '100107',
+    programmeCode: 'CS',
+    email: '100107@siswa.unimas.my',
+    yearOfStudy: 1,
+    cgpa: 3.40,
   ),
   Student(
     name: 'Michael Tan',
-    studentId: '100108',
-    programme: 'Data Engineering',
+    matricNo: '100108',
+    programmeCode: 'DE',
+    email: '100108@siswa.unimas.my',
+    yearOfStudy: 2,
+    cgpa: 3.25,
   ),
   Student(
     name: 'Farah Aziz',
-    studentId: '100109',
-    programme: 'Network Computing',
+    matricNo: '100109',
+    programmeCode: 'NC',
+    email: '100109@siswa.unimas.my',
+    yearOfStudy: 4,
+    cgpa: 3.60,
   ),
   Student(
     name: 'David Ng',
-    studentId: '100110',
-    programme: 'Software Engineering',
+    matricNo: '100110',
+    programmeCode: 'SE',
+    email: '100110@siswa.unimas.my',
+    yearOfStudy: 1,
+    cgpa: 3.50,
   ),
 ];
 
@@ -61,25 +91,22 @@ class StudentInformationPage extends StatefulWidget {
   const StudentInformationPage({super.key});
 
   @override
-  State<StudentInformationPage> createState() =>
-      _StudentInformationPageState();
+  State<StudentInformationPage> createState() => _StudentInformationPageState();
 }
 
-class _StudentInformationPageState
-    extends State<StudentInformationPage> {
-  final TextEditingController searchController =
-      TextEditingController();
+class _StudentInformationPageState extends State<StudentInformationPage> {
+  final TextEditingController searchController = TextEditingController();
 
   String selectedProgramme = 'All';
 
-  final List<String> programmes = [
-    'All',
-    'Computational Science',
-    'Data Engineering',
-    'Software Engineering',
-    'Network Computing',
-    'Multimedia Computing',
-  ];
+  final Map<String, String> programmes = {
+    'All': 'ALL',
+    'Software Engineering': 'SE',
+    'Computational Science': 'CS',
+    'Multimedia Computing': 'MC',
+    'Data Engineering': 'DE',
+    'Network Computing': 'NC',
+  };
 
   @override
   void dispose() {
@@ -93,11 +120,13 @@ class _StudentInformationPageState
 
       final matchesSearch =
           student.name.toLowerCase().contains(searchText) ||
-          student.studentId.toLowerCase().contains(searchText);
+              student.matricNo.toLowerCase().contains(searchText);
+
+      final selectedCode = programmes[selectedProgramme];
 
       final matchesProgramme =
           selectedProgramme == 'All' ||
-          student.programme == selectedProgramme;
+              student.programmeCode == selectedCode;
 
       return matchesSearch && matchesProgramme;
     }).toList();
@@ -119,10 +148,7 @@ class _StudentInformationPageState
             },
             decoration: InputDecoration(
               hintText: 'Search student...',
-              prefixIcon: const Icon(
-                Icons.search,
-                color: Colors.grey,
-              ),
+              prefixIcon: const Icon(Icons.search, color: Colors.grey),
               suffixIcon: searchController.text.isNotEmpty
                   ? IconButton(
                       icon: const Icon(Icons.close),
@@ -134,9 +160,7 @@ class _StudentInformationPageState
                   : null,
               filled: true,
               fillColor: const Color(0xFFF0F2F5),
-              contentPadding: const EdgeInsets.symmetric(
-                vertical: 14,
-              ),
+              contentPadding: const EdgeInsets.symmetric(vertical: 14),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(30),
                 borderSide: BorderSide.none,
@@ -151,17 +175,14 @@ class _StudentInformationPageState
           child: Wrap(
             spacing: 8,
             runSpacing: 8,
-            children: programmes.map((programme) {
-              final isSelected =
-                  selectedProgramme == programme;
+            children: programmes.keys.map((programme) {
+              final isSelected = selectedProgramme == programme;
 
               return ChoiceChip(
                 label: Text(
                   programme,
                   style: TextStyle(
-                    color: isSelected
-                        ? Colors.white
-                        : Colors.black87,
+                    color: isSelected ? Colors.white : Colors.black87,
                     fontWeight: FontWeight.w500,
                     fontSize: 12,
                   ),
@@ -192,16 +213,11 @@ class _StudentInformationPageState
               ? const Center(
                   child: Text(
                     'No students found',
-                    style: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 15,
-                    ),
+                    style: TextStyle(color: Colors.grey, fontSize: 15),
                   ),
                 )
               : ListView.builder(
-                  padding: const EdgeInsets.fromLTRB(
-                    16, 4, 16, 16,
-                  ),
+                  padding: const EdgeInsets.fromLTRB(16, 4, 16, 16),
                   itemCount: students.length,
                   itemBuilder: (context, index) {
                     final student = students[index];
@@ -209,15 +225,12 @@ class _StudentInformationPageState
                     return Card(
                       elevation: 2,
                       color: Colors.white,
-                      margin: const EdgeInsets.only(
-                        bottom: 12,
-                      ),
+                      margin: const EdgeInsets.only(bottom: 12),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(14),
                       ),
                       child: ListTile(
-                        contentPadding:
-                            const EdgeInsets.symmetric(
+                        contentPadding: const EdgeInsets.symmetric(
                           horizontal: 16,
                           vertical: 10,
                         ),
@@ -244,15 +257,12 @@ class _StudentInformationPageState
                         ),
 
                         subtitle: Padding(
-                          padding: const EdgeInsets.only(
-                            top: 5,
-                          ),
+                          padding: const EdgeInsets.only(top: 5),
                           child: Column(
-                            crossAxisAlignment:
-                                CrossAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                student.studentId,
+                                student.matricNo,
                                 style: const TextStyle(
                                   fontSize: 14,
                                   color: Colors.black54,
@@ -260,7 +270,7 @@ class _StudentInformationPageState
                               ),
                               const SizedBox(height: 4),
                               Text(
-                                student.programme,
+                                student.programmeCode,
                                 style: const TextStyle(
                                   fontSize: 13,
                                   color: Colors.grey,
@@ -276,9 +286,7 @@ class _StudentInformationPageState
                             context,
                             MaterialPageRoute(
                               builder: (context) =>
-                                  StudentDetailsPage(
-                                student: student,
-                              ),
+                                  StudentDetailsPage(student: student),
                             ),
                           );
                         },

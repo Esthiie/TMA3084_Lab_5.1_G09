@@ -79,7 +79,10 @@ class ProfileAboutPage extends StatelessWidget {
                   children: [
                     Text(
                       'App Information',
-                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
                     ),
                     Divider(),
                     Text('System Name: StudentHub'),

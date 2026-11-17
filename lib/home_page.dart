@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
-
-import '../data/programmes.dart';
-import '../data/students_data.dart';
+import 'package:provider/provider.dart';
+import 'app_state.dart';
+import 'programmes.dart';
+import 'students_data.dart';
+import 'studentInformationPage.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final appState = Provider.of<AppStateManager>(
+      context,
+      listen: false,
+    );
     final colors = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
 
@@ -63,17 +69,25 @@ class HomePage extends StatelessWidget {
           _QuickLinkButton(
             icon: Icons.people_alt_outlined,
             label: 'View Students',
-            onPressed: () => Navigator.pushNamed(context, '/students'),
+            onPressed: () {
+              context.read<AppStateManager>().selectTab(2);
+            },
           ),
+
           _QuickLinkButton(
             icon: Icons.table_chart_outlined,
             label: 'Student Records',
-            onPressed: () => Navigator.pushNamed(context, '/records'),
+            onPressed: () {
+              context.read<AppStateManager>().selectTab(2);
+            },
           ),
+
           _QuickLinkButton(
             icon: Icons.info_outline,
             label: 'About',
-            onPressed: () => Navigator.pushNamed(context, '/about'),
+            onPressed: () {
+              context.read<AppStateManager>().selectTab(4);
+            },
           ),
         ],
       ),

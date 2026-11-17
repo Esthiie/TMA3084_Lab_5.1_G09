@@ -1,4 +1,4 @@
-import '../models/student.dart';
+import 'student.dart';
 
 const List<Student> sampleStudents = [
   Student(
