@@ -15,9 +15,7 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-
         title: const Text('StudentHub'),
-        second_conflict_merge
         centerTitle: true,
         backgroundColor: colors.primary,
         foregroundColor: Colors.white,
