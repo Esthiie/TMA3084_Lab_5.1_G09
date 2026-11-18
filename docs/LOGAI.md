@@ -113,3 +113,47 @@ During this lab, **Gemini Pro** was utilized exclusively as the primary AI produ
 ## 3. Reflection on AI-Assisted Development
 * **Efficiency & Workflow:** It certainly help with fixing errors that require a lot of time to go through each files. However, I feel like it took more time to properly debug the application and pushing/pulling github since I can type much faster without refering to prompts.
 * **Problem Solving:** I think AI suggestions have 50% correctness in solving problems, thus human invention is still required to check each code one by one.
+
+---
+
+# AI Usage Log - Vanessa (106615)
+
+* **Student Name:** Vanessa Fedillia Anak Mathew
+* **Matric Number:** 106615
+* **Group:** Team 09 (TMA3084 Lab 5.1)
+* **Feature Developed:** Home Page (`home_page.dart`) and Student Details Page (`student_details_page.dart`)
+
+---
+
+## 1. Overview of AI Tools Used
+**Claude** was used for UI/UX layout brainstorming, widget selection advice, and visual consistency alignment with teammates' pages. All my part Dart code was written manually using AI suggestions only as an architectural reference and moving my work into the group repository with Git branches.
+
+---
+
+## 2. Summary of AI Prompts & Responses
+
+### Prompt 1: Adjusting the data and the Details page
+* **Tool:** Claude
+* **Prompt:**"Here is the list of student attributes for our Student Details page (name, matric number, programme, email, semester, CGPA). Suggest a clean Material 3 Flutter layout format to organize this information clearly."*
+* **AI Output:** Provided a structured widget layout grouping the student profile header at the top and organizing the attributes into clean `Card` and `ListTile` sections with `SelectableText`.
+* **Integration Decision:** Accepted. Used the suggested visual hierarchy and card grouping as a reference while writing my own Dart code manually. I replaced the AI's hardcoded sample text with our group's shared `Student` model and adjusted the padding so it fits smaller screens properly.
+
+### Prompt 2: Temporary Student List for testing
+* **Tool:** Claude
+* **Prompt:** *"can we make the student list like this with these sorting kind of things and also the search bar"*
+* **AI Output:** A temporary `temp_pages.dart` with a search bar, programme filter chips and a list that opens my Student Details page.
+* **Integration Decision:** Used only for local testing. Rejected for the group repository, because the Student Information page belongs to a teammate.
+
+### Prompt 3: Grammar and formatting
+* **Tool:** Claude
+* **Prompt:** I asked Claude to check my writing and format my AI usage log and individual report, and later to add context to my prompts so they are easier to understand.
+* **AI Output:** Corrected grammar and rewrote my prompts into clearer sentences.
+* **Integration Decision:** Accepted after reading through each section and checking that it still describes what I actually did. I filled in my own details and screenshots.
+
+---
+
+## 3. Reflection on AI-Assisted Development
+* **Efficiency & Workflow:** Going through the code one file at a time helped me understand what each widget does, such as `StatelessWidget` versus `StatefulWidget`, `SelectableText`, and how `StudentDetailsPage(student: student)` passes data between pages. The AI also helped me fix Git mistakes, such as moving a commit to the correct branch.
+* **Problem Solving:** Not every suggestion was right the first time (wrong file names, duplicated welcome text, removing the wrong section). I checked each change by running `dart format` and `flutter analyze` (No issues found) and testing on the emulator before committing.
+
+---
