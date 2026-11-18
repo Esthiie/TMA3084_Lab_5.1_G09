@@ -146,7 +146,7 @@ During this lab, **Gemini Pro** was utilized exclusively as the primary AI produ
 
 ### Prompt 3: Grammar and formatting
 * **Tool:** Claude
-* **Prompt:** I asked Claude to check my writing and format my AI usage log and individual report, and later to add context to my prompts so they are easier to understand.
+* **Prompt:** I asked Claude to check my writing and my grammar.
 * **AI Output:** Corrected grammar and rewrote my prompts into clearer sentences.
 * **Integration Decision:** Accepted after reading through each section and checking that it still describes what I actually did. I filled in my own details and screenshots.
 
